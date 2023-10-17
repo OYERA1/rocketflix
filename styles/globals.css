@@ -18,7 +18,7 @@ body {
 
 body {
   overflow-y: scroll;
-  background: linear-gradient(67deg, #1e46a3 0%, #000 48.94%, #c12a23 99.97%);
+  background-color: #111111;
   background-size: cover;
   background-repeat: no-repeat;
 }

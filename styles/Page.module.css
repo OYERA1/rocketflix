@@ -1,9 +1,23 @@
 .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 7rem;
+}
+
+.wrap {
   align-items: center;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin-top: 7rem;
+  padding: 3rem;
+  width: max-content;
+  background-color: #1a1a1a;
+  border: 1px solid green;
+  border-radius: 8px;
+  box-shadow: 0px 1px 50px rgba(11, 175, 11, 0.438);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 .title {
@@ -16,7 +30,7 @@
 .buttonStyle {
   border-radius: 0.3125rem;
   border: 2px solid #1a1a1a;
-  background: #e9e6e3;
+  background: #1cac1c;
   align-items: center;
   color: #000;
   display: flex;
@@ -29,6 +43,12 @@
   justify-content: center;
   line-height: normal;
   width: 11.3115rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.buttonStyle:hover {
+  background-color: #168516;
 }
 
 .subtitle {

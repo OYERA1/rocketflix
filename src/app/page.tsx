@@ -35,24 +35,25 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <Image src={logo} alt="logo do site" width={87.24} height={62.93} />
-      <span className={styles.title}>Não sabe o que assistir?</span>
+      <div className={styles.wrap}>
+        <Image src={logo} alt="logo do site" width={87.24} height={62.93} />
+        <span className={styles.title}>Não sabe o que assistir?</span>
 
-      {movieData && (
-        <Resumes
-          posters={movieData.poster}
-          title={movieData.title}
-          resumeText={movieData.overview}
-        />
-      )}
-      <button className={styles.buttonStyle} onClick={handle}>
-        <Image src={logo} alt={"logo button"} width={35.2} height={25.28} />
-        Encontrar filme
-      </button>
-      <span className={styles.subtitle}>
-        Clique em "Encontrar filme que te traremos informações de alugm filme
-        para você assistir hoje
-      </span>
+        {movieData && (
+          <Resumes
+            posters={movieData.poster}
+            title={movieData.title}
+            resumeText={movieData.overview}
+          />
+        )}
+        <button className={styles.buttonStyle} onClick={handle}>
+          Encontrar filme
+        </button>
+        <span className={styles.subtitle}>
+          Clique em "Encontrar filme que te traremos informações de alugm filme
+          para você assistir hoje
+        </span>
+      </div>
     </div>
   );
 }
