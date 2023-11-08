@@ -26,6 +26,7 @@ export default function Home() {
 
       if (data) {
         movie = data;
+        console.log(data);
       } else {
         console.log("tentando dnv", random);
       }
