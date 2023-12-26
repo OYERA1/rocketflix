@@ -3,7 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { MovieContextProvider } from "../../context/MovieContext";
 
-export const poppins = Poppins({
+const poppins = Poppins({
   weight: ["400", "500", "700"],
   subsets: ["latin"],
   variable: "--font-poppins",
