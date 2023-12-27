@@ -1,13 +1,14 @@
 "use client";
 
 import { ReactNode, createContext, useContext, useState } from "react";
-import { fetchMovieData, randomId } from "@/api/api";
+import { fetchMovieData } from "@/api/api";
 
-interface MovieDataType {
+export interface MovieDataType {
   title: string;
   overview: string;
   poster: string;
   id: number;
+  vote: number | null;
 }
 
 type MovieContextType = {
@@ -29,7 +30,6 @@ export function MovieContextProvider({ children }: { children: ReactNode }) {
 
   const getMovieData = async () => {
     const data = await fetchMovieData();
-    console.log(data);
     updateMovieData(data);
   };
   return (

@@ -1,7 +1,7 @@
-const IMG_URL = "https://image.tmdb.org/t/p/original";
-const language = "language=pt-BR";
-const authorization = process.env.NEXT_PUBLIC_API_KEY;
-const options = {
+export const IMG_URL = "https://image.tmdb.org/t/p/original";
+export const language = "language=pt-BR";
+export const authorization = process.env.NEXT_PUBLIC_API_KEY;
+export const options = {
   method: "GET",
   headers: {
     accept: "application/json",
@@ -38,5 +38,6 @@ export async function fetchMovieData() {
     overview: data.overview,
     poster: IMG_URL + data.poster_path,
     id: data.id,
+    vote: Math.floor(data.vote_average * 10),
   };
 }
