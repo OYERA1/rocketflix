@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { MovieContext } from "../../context/MovieContext";
 import ImageComponent from "./Image";
-import ThemeSwticher from "./ThemeSwitcher";
 
 export default function Resume() {
   const { movieData } = useContext(MovieContext);

@@ -1,7 +1,7 @@
 "use client";
 
 import { useMovie } from "../../context/MovieContext";
-import Resume from "@/components/Resumes";
+import Resume from "@/components/resume";
 import ThemeSwticher from "@/components/ThemeSwitcher";
 
 export default function Home() {
