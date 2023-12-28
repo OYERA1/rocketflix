@@ -1,7 +1,7 @@
 "use client";
 
-import { TbSunHigh, TbMoonStars } from "react-icons/tb";
 import { useTheme } from "next-themes";
+import { TbSunHigh, TbMoonStars } from "react-icons/tb";
 
 export default function ThemeSwticher({ className }: any) {
   const { theme, setTheme } = useTheme();

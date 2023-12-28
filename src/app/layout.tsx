@@ -1,8 +1,8 @@
-import { MovieContextProvider } from "../../context/MovieContext";
-import { Poppins } from "next/font/google";
-import type { Metadata } from "next";
 import "./globals.css";
 import Providers from "../../context/ThemeProvider";
+import type { Metadata } from "next";
+import { MovieContextProvider } from "../../context/MovieContext";
+import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
   weight: ["400", "500", "700"],

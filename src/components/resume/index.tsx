@@ -1,6 +1,6 @@
+import ImageComponent from "../image";
+import { MovieContext } from "../../../context/MovieContext";
 import { useContext, useEffect, useState } from "react";
-import { MovieContext } from "../../context/MovieContext";
-import ImageComponent from "./image";
 
 export default function Resume() {
   const { movieData } = useContext(MovieContext);

@@ -1,8 +1,7 @@
-import React, { useState } from "react";
-import { MovieDataType } from "../../context/MovieContext";
-
 import Image from "next/image";
-import { Circle } from "./circle";
+import { Circle } from "../circle";
+import React, { useState } from "react";
+import { MovieDataType } from "../../../context/MovieContext";
 
 interface MovieDataProps {
   movieData: MovieDataType | null;

@@ -1,7 +1,7 @@
 "use client";
 
-import { ReactNode, createContext, useContext, useState } from "react";
 import { fetchMovieData } from "@/api/api";
+import { ReactNode, createContext, useContext, useState } from "react";
 
 export interface MovieDataType {
   title: string;
