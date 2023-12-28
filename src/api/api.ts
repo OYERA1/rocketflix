@@ -33,11 +33,15 @@ export async function fetchMovieData() {
     }
   }
 
-  return {
-    title: data.title,
-    overview: data.overview,
-    poster: IMG_URL + data.poster_path,
-    id: data.id,
-    vote: Math.floor(data.vote_average * 10),
-  };
+  return (
+    console.log(data),
+    {
+      title: data.title,
+      overview: data.overview,
+      poster: IMG_URL + data.poster_path,
+      id: data.id,
+      vote: Math.floor(data.vote_average * 10),
+      releaseDate: data.release_date.substring(0, 4),
+    }
+  );
 }

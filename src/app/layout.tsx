@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
-import "./globals.css";
 import { MovieContextProvider } from "../../context/MovieContext";
+import { Poppins } from "next/font/google";
+import type { Metadata } from "next";
+import "./globals.css";
+import Providers from "../../context/ThemeProvider";
 
 const poppins = Poppins({
   weight: ["400", "500", "700"],
@@ -22,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <MovieContextProvider>{children}</MovieContextProvider>
+        <Providers>
+          <MovieContextProvider>{children}</MovieContextProvider>
+        </Providers>
       </body>
     </html>
   );

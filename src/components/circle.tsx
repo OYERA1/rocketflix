@@ -43,7 +43,7 @@ export function Circle({ percentage, circleWidth }: any) {
           dy="0.3em"
           textAnchor="middle"
           fill="white"
-          className="text-base font-semibold"
+          className="text-sm font-semibold"
         >
           {percentage}%
         </text>

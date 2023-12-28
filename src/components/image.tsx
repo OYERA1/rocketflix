@@ -1,24 +1,34 @@
-import Image from "next/image";
+import React, { useEffect, useState } from "react";
 import { MovieDataType } from "../../context/MovieContext";
-import { Circle } from "./circle";
+
+import Image from "next/image";
+import placeholder from "../../public/placeholder.png";
+import { Circle } from "./Circle";
 
 interface MovieDataProps {
   movieData: MovieDataType | null;
 }
 
 export default function ImageComponent({ movieData }: MovieDataProps) {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col relative">
       <Image
-        src={movieData ? movieData.poster : "carregando..."}
         alt={movieData ? movieData.title : "carregando..."}
+        className={`max-w-max max-h-max rounded-xl ${!isLoaded && "hidden"}`}
         height={300}
+        loading="eager"
+        onLoadingComplete={(img) => setIsLoaded(true)}
+        onLoadStart={(img) => setIsLoaded(false)}
+        src={movieData ? movieData.poster : ""}
         width={200}
-        className=" max-w-max max-h-max rounded-xl"
       />
-      <div className="absolute -translate-y-4 -translate-x-6 sm:top-1/2 transform sm:-translate-x-1/4 sm:translate-y-[110px]">
-        <Circle percentage={movieData?.vote} circleWidth={50} />
-      </div>
+      {isLoaded && (
+        <div className="absolute -translate-y-4 -translate-x-6 sm:top-1/2 transform sm:-translate-x-1/4 sm:translate-y-[110px]">
+          <Circle percentage={movieData?.vote} circleWidth={50} />
+        </div>
+      )}
     </div>
   );
 }

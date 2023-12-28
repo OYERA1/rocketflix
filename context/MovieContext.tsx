@@ -9,6 +9,7 @@ export interface MovieDataType {
   poster: string;
   id: number;
   vote: number | null;
+  releaseDate: string | null;
 }
 
 type MovieContextType = {
