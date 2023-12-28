@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { MovieDataType } from "../../context/MovieContext";
 
 import Image from "next/image";
-import placeholder from "../../public/placeholder.png";
-import { Circle } from "./Circle";
+import { Circle } from "./circle";
 
 interface MovieDataProps {
   movieData: MovieDataType | null;

@@ -2,7 +2,7 @@
 
 import { useMovie } from "../../context/MovieContext";
 import Resume from "@/components/resume";
-import ThemeSwticher from "@/components/ThemeSwitcher";
+import ThemeSwticher from "@/components/themeSwitcher";
 
 export default function Home() {
   const { movieData, getMovieData } = useMovie();
