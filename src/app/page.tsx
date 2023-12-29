@@ -5,10 +5,24 @@ import Resume from "@/components/resume";
 import Button from "@/components/button";
 import ThemeSwticher from "@/components/themeswitcher";
 import { useMovie } from "../../context/MovieContext";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  const { movieData, getMovieData } = useMovie();
+  const { movieData, getMovieData, stagedData } = useMovie();
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => {
+    if (stagedData) {
+      setIsMounted(true);
+    }
+  });
 
+  if (!isMounted) {
+    return (
+      <Main>
+        <p className="text-content">Loading...</p>
+      </Main>
+    );
+  }
   return (
     <Main>
       <div>

@@ -20,13 +20,13 @@ export interface MovieDataType {
 
 type MovieContextType = {
   movieData: MovieDataType | null;
-  updateMovieData: (newState: MovieDataType | null) => void;
+  stagedData: MovieDataType[];
   getMovieData: () => void;
 };
 
 const initialValue: MovieContextType = {
   movieData: null,
-  updateMovieData: () => {},
+  stagedData: [],
   getMovieData: async () => null,
 };
 
@@ -68,7 +68,7 @@ export const MovieContextProvider = ({ children }: { children: ReactNode }) => {
   }
 
   return (
-    <MovieContext.Provider value={{ movieData, updateMovieData, getMovieData }}>
+    <MovieContext.Provider value={{ movieData, getMovieData, stagedData }}>
       {children}
     </MovieContext.Provider>
   );

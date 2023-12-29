@@ -1,6 +1,5 @@
 import { ButtonHTMLAttributes } from "react";
 import { PiFilmSlate } from "react-icons/pi";
-import { useMovie } from "../../../context/MovieContext";
 
 export default function Button({
   ...rest
