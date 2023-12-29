@@ -1,5 +1,3 @@
-import { MovieDataType } from "../../context/MovieContext";
-
 const IMG_URL = "https://image.tmdb.org/t/p/original";
 const authorization = process.env.NEXT_PUBLIC_API_KEY;
 
