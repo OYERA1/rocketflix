@@ -13,13 +13,13 @@ export default function ImageComponent({ movieData }: MovieDataProps) {
   return (
     <div className="flex flex-col relative">
       <Image
-        alt={movieData ? movieData.title : "carregando..."}
+        alt={movieData?.title || "carregando..."}
         className={`max-w-max max-h-max rounded-xl ${!isLoaded && "hidden"}`}
         height={300}
         loading="eager"
         onLoadingComplete={(img) => setIsLoaded(true)}
         onLoadStart={(img) => setIsLoaded(false)}
-        src={movieData ? movieData.poster : ""}
+        src={movieData?.poster || ""}
         width={200}
       />
       {isLoaded && (
