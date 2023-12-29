@@ -1,7 +1,13 @@
 "use client";
 
 import { fetchMovieData } from "@/api/api";
-import { ReactNode, createContext, useContext, useState } from "react";
+import {
+  ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 export interface MovieDataType {
   title?: string | null;
@@ -15,30 +21,58 @@ export interface MovieDataType {
 type MovieContextType = {
   movieData: MovieDataType | null;
   updateMovieData: (newState: MovieDataType | null) => void;
-  getMovieData: () => Promise<void>;
+  getMovieData: () => void;
 };
 
 const initialValue: MovieContextType = {
   movieData: null,
   updateMovieData: () => {},
-  getMovieData: async () => {},
+  getMovieData: async () => null,
 };
 
 export const MovieContext = createContext<MovieContextType>(initialValue);
 
-export function MovieContextProvider({ children }: { children: ReactNode }) {
+export const MovieContextProvider = ({ children }: { children: ReactNode }) => {
   const [movieData, updateMovieData] = useState<MovieDataType | null>(null);
+  const [stagedData, setStagedData] = useState<MovieDataType[]>([]);
 
-  const getMovieData = async () => {
-    const data = await fetchMovieData();
-    updateMovieData(data);
-  };
+  async function loadMovieData() {
+    try {
+      if (stagedData.length >= 5) {
+        return;
+      } else {
+        const data = await fetchMovieData();
+        if (data) {
+          setStagedData([...stagedData, data]);
+        }
+      }
+    } catch (error) {
+      console.error("Erro ao obter dados do filme:", error);
+    }
+  }
+
+  useEffect(() => {
+    loadMovieData();
+  }, [stagedData]);
+
+  function getMovieData() {
+    for (let i = 0; i < stagedData.length; i++) {
+      if (!stagedData[i]) {
+        i++;
+        updateMovieData(stagedData[i]);
+      }
+      updateMovieData(stagedData[i]);
+      setStagedData([]);
+      loadMovieData();
+    }
+  }
+
   return (
     <MovieContext.Provider value={{ movieData, updateMovieData, getMovieData }}>
       {children}
     </MovieContext.Provider>
   );
-}
+};
 
 export const useMovie = () => {
   const context = useContext(MovieContext);

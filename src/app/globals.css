@@ -19,7 +19,9 @@
     --color-gradient-1: 219deg 80% 78%;
     --color-gradient-2: 263deg 80% 78%;
     --color-blur-primary: 10deg 2% 4%;
+    --color-blur-secondary: #003262;
     --color-text-1: 16 28 71;
+    --color-element-1: 203 213 225;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -28,7 +30,13 @@
       --color-gradient-1: 277deg 40% 53%;
       --color-gradient-2: 0deg 87% 32%;
       --color-blur-primary: 10deg 0% 0%;
-      --color-text-1: 255 255 255;
+      --color-blur-secondary: #de3163;
+      --color-text-1: 211 221 245;
+      --color-element-1: 24 24 27;
     }
   }
+}
+
+.icon-transition {
+  transition: transform 100s ease; /* Adicione outras propriedades de transição conforme necessário */
 }

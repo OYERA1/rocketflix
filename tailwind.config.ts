@@ -18,9 +18,13 @@ const config: Config = {
           primary: "hsl(var(--color-bkg) / <alpha-value>)",
         },
         blur: {
-          primary: "hsl(var(--color-blur-primary) / <alpha-value>",
+          primary: "hsl(var(--color-blur-primary) / <alpha-value>)",
+          secondary: "var(--color-blur-secondary)",
         },
         content: "rgb(var(--color-text-1) / <alpha-value>)",
+        element: {
+          1: "rgb(var(--color-element-1) / <alpha-value>)",
+        },
       },
       animation: {
         "spin-slower": "spin 35s ease infinite",

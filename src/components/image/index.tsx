@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Circle } from "../circle";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { MovieDataType } from "../../../context/MovieContext";
 
 interface MovieDataProps {
@@ -17,8 +17,7 @@ export default function ImageComponent({ movieData }: MovieDataProps) {
         className={`max-w-max max-h-max rounded-xl ${!isLoaded && "hidden"}`}
         height={300}
         loading="eager"
-        onLoadingComplete={(img) => setIsLoaded(true)}
-        onLoadStart={(img) => setIsLoaded(false)}
+        onLoad={(img) => setIsLoaded(true)}
         src={movieData?.poster || ""}
         width={200}
       />

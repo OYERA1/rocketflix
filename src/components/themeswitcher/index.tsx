@@ -12,18 +12,16 @@ export default function ThemeSwticher({ className }: any) {
 
   return (
     <div className={`${className}`}>
-      <label htmlFor="darkmode" className="skew-x-1 cursor-pointer">
+      <label htmlFor="darkmode" className="cursor-pointer ">
         {theme === "dark" ? (
-          <div>
-            <TbSunHigh
-              size={23}
-              className="text-yellow-600 active:animate-spin ease-out"
-            />
-          </div>
+          <TbSunHigh
+            size={23}
+            className="text-yellow-600 active:animate-spin"
+          />
         ) : (
           <TbMoonStars
             size={23}
-            className="text-indigo-600 active:animate-spin ease-out"
+            className="text-indigo-600 active:animate-spin"
           />
         )}
       </label>

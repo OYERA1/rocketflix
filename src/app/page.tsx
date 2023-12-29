@@ -11,31 +11,31 @@ export default function Home() {
 
   return (
     <Main>
-      <ThemeSwticher className="flex w-full justify-end mb-10" />
-      <div
-        className="flex flex-col items-center py-5 px-10 bg-blue-950 rounded-md
+      <div>
+        <ThemeSwticher className="flex w-full justify-end mb-10" />
+        <div
+          className="flex flex-col items-center py-5 px-10 bg-blue-950 rounded-md
         backdrop-filter backdrop-blur-xl bg-opacity-20 border-2 border-slate-600"
-      >
-        {movieData ? (
-          <Resume />
-        ) : (
-          <div className="flex w-full mb-16">
-            <span className=" text-center w-full font-semibold text-xl">
+        >
+          {movieData ? (
+            <Resume />
+          ) : (
+            <span className="mb-16 text-center w-full font-semibold text-xl">
               Não sabe o que assistir?
             </span>
-          </div>
-        )}
+          )}
 
-        <Button onClick={getMovieData} />
+          <Button onClick={getMovieData} />
 
-        {movieData ? (
-          ""
-        ) : (
-          <span className="text-center">
-            Clique em "Encontrar filme" que te traremos informações de algum
-            filme para você assistir hoje!
-          </span>
-        )}
+          {movieData ? (
+            ""
+          ) : (
+            <span className="text-center">
+              Clique em "Encontrar filme" que te traremos informações de algum
+              filme para você assistir hoje!
+            </span>
+          )}
+        </div>
       </div>
     </Main>
   );

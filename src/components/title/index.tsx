@@ -1,8 +1,12 @@
 import { MovieDataType } from "../../../context/MovieContext";
 
-const Title = ({ title, releaseDate }: MovieDataType) => {
+interface TitleProps extends MovieDataType {
+  className?: string;
+}
+
+const Title = ({ title, releaseDate, className }: TitleProps) => {
   return (
-    <div>
+    <div className={className}>
       <h1>{title}</h1>
       <p>({releaseDate})</p>
     </div>

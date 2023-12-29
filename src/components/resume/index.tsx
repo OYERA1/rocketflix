@@ -14,20 +14,40 @@ export default function Resume() {
   if (!mounted) {
     return null;
   }
+
   return (
-    <main className="flex flex-col items-center sm:justify-center gap-10 sm:m-10 sm:w-[1000px] sm:h-[400px]">
-      <span className="font-bold text-2xl text-center">
+    <main className="flex flex-col sm:flex-row gap-7 sm:m-10 sm:w-[1000px] sm:h-[400px]">
+      <div
+        className="flex flex-col
+      gap-8 break-keep
+      justify-end items-center mt-4 sm:m-0 text-xl font-bold text-center"
+      >
         {movieData ? (
-          <Title title={movieData.title} releaseDate={movieData.releaseDate} />
+          <Title
+            className={`sm:hidden `}
+            title={movieData.title}
+            releaseDate={movieData.releaseDate}
+          />
         ) : (
           "carregando..."
         )}
-      </span>
-
-      <div className="flex flex-col sm:flex-row gap-6 sm:gap-16 items-center sm:items-start sm:px-10">
         <ImageComponent movieData={movieData} />
+      </div>
 
-        <span className="flex flex-wrap text-center mb-4 sm:mb-0 sm:text-start sm:min-w-[645px]">
+      <div className="flex flex-col sm:gap-8  items-center sm:px-10">
+        <div className="font-bold text-2xl text-center">
+          {movieData ? (
+            <Title
+              className="hidden sm:block"
+              title={movieData.title}
+              releaseDate={movieData.releaseDate}
+            />
+          ) : (
+            "carregando..."
+          )}
+        </div>
+
+        <span className="flex flex-wrap mb-4 text-justify sm:mb-0 sm:text-start sm:min-w-[645px]">
           {movieData
             ? movieData.overview == ""
               ? "Este filme não possui um resumo."
