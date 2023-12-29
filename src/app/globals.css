@@ -8,8 +8,9 @@
   box-sizing: border-box;
 }
 
-html {
-  animate: ease-in-out 2s;
+[data-theme="dark"]body,
+[data-theme="light"]body {
+  transition: 1s ease;
 }
 
 @layer base {
@@ -18,15 +19,16 @@ html {
     --color-gradient-1: 219deg 80% 78%;
     --color-gradient-2: 263deg 80% 78%;
     --color-blur-primary: 10deg 2% 4%;
-    --color-text-1: 0 0 0;
+    --color-text-1: 16 28 71;
   }
+
   @media (prefers-color-scheme: dark) {
     [data-theme="dark"]:root {
       --color-bkg: 219deg 97% 6%;
       --color-gradient-1: 277deg 40% 53%;
       --color-gradient-2: 0deg 87% 32%;
       --color-blur-primary: 10deg 0% 0%;
-      --color-text-1: 255;
+      --color-text-1: 255 255 255;
     }
   }
 }

@@ -12,7 +12,7 @@ export default function ThemeSwticher({ className }: any) {
 
   return (
     <div className={`${className}`}>
-      <label htmlFor="darkmode" className="skew-x-1 ">
+      <label htmlFor="darkmode" className="skew-x-1 cursor-pointer">
         {theme === "dark" ? (
           <div>
             <TbSunHigh

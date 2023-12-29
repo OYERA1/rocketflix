@@ -4,12 +4,12 @@ import { fetchMovieData } from "@/api/api";
 import { ReactNode, createContext, useContext, useState } from "react";
 
 export interface MovieDataType {
-  title: string;
-  overview: string;
-  poster: string;
-  id: number;
-  vote: number | null;
-  releaseDate: string | null;
+  title?: string | null;
+  overview?: string;
+  poster?: string;
+  id?: number;
+  vote?: number | null;
+  releaseDate?: string | null;
 }
 
 type MovieContextType = {
